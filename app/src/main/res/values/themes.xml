@@ -2,4 +2,6 @@
 <resources>
 
     <style name="Theme.DogImageGenerator" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <style name="Theme.DogImageGenerator.ActionBar" parent="Theme.AppCompat.Light" />
 </resources>

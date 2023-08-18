@@ -1,6 +1,7 @@
 package com.dogimagegenerator.app.base
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.dogimagegenerator.app.R
@@ -16,11 +17,13 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity(), BaseErrorInt
     private lateinit var _binding: T
     protected val binding get() = _binding
     private var errorBottomSheet: ErrorBottomSheet? = null
+    protected open fun isBackButtonEnabled() = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = inflateViewBinding()
         setContentView(_binding.root)
+        if (isBackButtonEnabled()) supportActionBar?.setDisplayHomeAsUpEnabled(true)
         init()
     }
 
@@ -67,5 +70,12 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity(), BaseErrorInt
             setErrorInterface(this@BaseActivity)
             show(supportFragmentManager)
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (isBackButtonEnabled() && item.itemId == android.R.id.home) {
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

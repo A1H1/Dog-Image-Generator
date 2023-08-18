@@ -25,6 +25,8 @@ class GenerateActivity : BaseMVVMActivity<GenerateViewModel, ActivityGenerateBin
 
     override fun inflateViewBinding() = ActivityGenerateBinding.inflate(layoutInflater)
 
+    override fun isBackButtonEnabled() = true
+
     override fun init() {
         binding.generateButton.setDebounceClickListener { viewModel.getImage() }
     }
