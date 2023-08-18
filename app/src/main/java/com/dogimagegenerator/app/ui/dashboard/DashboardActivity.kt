@@ -1,12 +1,16 @@
 package com.dogimagegenerator.app.ui.dashboard
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.dogimagegenerator.app.R
+import com.dogimagegenerator.app.base.BaseActivity
+import com.dogimagegenerator.app.databinding.ActivityDashboardBinding
+import com.dogimagegenerator.app.ui.generate.GenerateActivity
+import com.dogimagegenerator.app.utils.setDebounceClickListener
 
-class DashboardActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
+class DashboardActivity : BaseActivity<ActivityDashboardBinding>() {
+
+    override fun inflateViewBinding() = ActivityDashboardBinding.inflate(layoutInflater)
+
+    override fun init() {
+        binding.generateDogButton.setDebounceClickListener { GenerateActivity.launch(this) }
+        binding.dogHistoryButton.setDebounceClickListener { }
     }
 }

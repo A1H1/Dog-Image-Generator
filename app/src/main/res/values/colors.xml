@@ -4,4 +4,7 @@
     <color name="dark_blue">#254174</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="black70Opacity">#B3000000</color>
+    <color name="gray">@android:color/darker_gray</color>
+    <color name="background">#dddddd</color>
 </resources>
