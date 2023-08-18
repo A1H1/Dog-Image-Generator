@@ -2,13 +2,14 @@ package com.dogimagegenerator.app.ui.generate
 
 import android.content.Context
 import android.content.Intent
-import com.bumptech.glide.Glide
 import com.dogimagegenerator.app.R
 import com.dogimagegenerator.app.base.BaseMVVMActivity
 import com.dogimagegenerator.app.data.event.DataType
 import com.dogimagegenerator.app.databinding.ActivityGenerateBinding
 import com.dogimagegenerator.app.utils.EventObserver
+import com.dogimagegenerator.app.utils.GlideApp
 import com.dogimagegenerator.app.utils.hide
+import com.dogimagegenerator.app.utils.setDebounceClickListener
 import com.dogimagegenerator.app.utils.show
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -25,7 +26,7 @@ class GenerateActivity : BaseMVVMActivity<GenerateViewModel, ActivityGenerateBin
     override fun inflateViewBinding() = ActivityGenerateBinding.inflate(layoutInflater)
 
     override fun init() {
-        binding.generateButton.setOnClickListener { viewModel.getImage() }
+        binding.generateButton.setDebounceClickListener { viewModel.getImage() }
     }
 
     override fun observers() {
@@ -53,7 +54,7 @@ class GenerateActivity : BaseMVVMActivity<GenerateViewModel, ActivityGenerateBin
     }
 
     private fun updateUI(data: String) {
-        Glide
+        GlideApp
             .with(this)
             .load(data)
             .centerCrop()

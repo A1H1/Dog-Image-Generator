@@ -11,7 +11,7 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/dogImageView"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_200"
+        android:layout_height="@dimen/dimen_300"
         android:layout_marginHorizontal="@dimen/dimen_20"
         android:visibility="gone"
         tools:src="@drawable/bg_button" />
@@ -25,7 +25,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_200"
+            android:layout_height="@dimen/dimen_300"
             android:layout_marginHorizontal="@dimen/dimen_20"
             android:background="@color/background" />
     </com.facebook.shimmer.ShimmerFrameLayout>

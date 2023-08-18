@@ -1,6 +1,7 @@
 package com.dogimagegenerator.app.network
 
 import android.content.Context
+import com.dogimagegenerator.app.BuildConfig
 import com.dogimagegenerator.app.data.api.DogAPIService
 import com.dogimagegenerator.app.utils.AppConst
 import com.dogimagegenerator.app.utils.AppConst.SERVER_TIMEOUT_CONNECT
@@ -9,7 +10,6 @@ import com.dogimagegenerator.app.utils.AppConst.SERVER_TIMEOUT_WRITE
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.koin.android.BuildConfig
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
