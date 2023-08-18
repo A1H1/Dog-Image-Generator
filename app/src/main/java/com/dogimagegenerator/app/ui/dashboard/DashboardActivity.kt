@@ -1,11 +1,12 @@
-package com.dogimagegenerator.app
+package com.dogimagegenerator.app.ui.dashboard
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.dogimagegenerator.app.R
 
-class MainActivity : AppCompatActivity() {
+class DashboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_dashboard)
     }
 }
