@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 class GenerateViewModel(private val useCase: DogImageUseCase) : ViewModel() {
     private val _image = MutableLiveData<Event<DataWrapper<String>>>()
     val image: LiveData<Event<DataWrapper<String>>> get() = _image
+
     fun getImage() {
         _image.postData(DataWrapper(isLoading = true))
         viewModelScope.launch { _image.postData(useCase.getDogImage()) }

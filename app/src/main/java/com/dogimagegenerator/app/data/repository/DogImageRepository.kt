@@ -10,6 +10,7 @@ import com.dogimagegenerator.app.data.model.DogImageResponse
 interface DogImageRepository {
     suspend fun getDogImage(): ResponseWrapper<DogImageResponse>
     fun getDogImages(): List<String>
+    fun clearImages()
 }
 
 class DogImageRepositoryImpl(
@@ -28,4 +29,8 @@ class DogImageRepositoryImpl(
     }
 
     override fun getDogImages() = prefService.getImages()
+
+    override fun clearImages() {
+        prefService.clearImages()
+    }
 }

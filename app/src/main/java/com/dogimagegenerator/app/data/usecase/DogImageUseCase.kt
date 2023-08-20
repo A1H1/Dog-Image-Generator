@@ -8,6 +8,7 @@ import com.dogimagegenerator.app.data.repository.DogImageRepository
 interface DogImageUseCase {
     suspend fun getDogImage(): DataWrapper<String>
     fun getDogImages(): List<String>
+    fun clearImages()
 }
 
 class DogImageUseCaseImpl(private val repository: DogImageRepository) : DogImageUseCase {
@@ -21,4 +22,8 @@ class DogImageUseCaseImpl(private val repository: DogImageRepository) : DogImage
     }
 
     override fun getDogImages() = repository.getDogImages()
+
+    override fun clearImages() {
+        repository.clearImages()
+    }
 }

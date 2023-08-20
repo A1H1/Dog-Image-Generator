@@ -3,6 +3,7 @@ package com.dogimagegenerator.app.ui.dashboard
 import com.dogimagegenerator.app.base.BaseActivity
 import com.dogimagegenerator.app.databinding.ActivityDashboardBinding
 import com.dogimagegenerator.app.ui.generate.GenerateActivity
+import com.dogimagegenerator.app.ui.history.HistoryActivity
 import com.dogimagegenerator.app.utils.setDebounceClickListener
 
 class DashboardActivity : BaseActivity<ActivityDashboardBinding>() {
@@ -11,6 +12,6 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding>() {
 
     override fun init() {
         binding.generateDogButton.setDebounceClickListener { GenerateActivity.launch(this) }
-        binding.dogHistoryButton.setDebounceClickListener { }
+        binding.dogHistoryButton.setDebounceClickListener { HistoryActivity.launch(this) }
     }
 }

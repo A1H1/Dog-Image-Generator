@@ -22,4 +22,10 @@ class PrefService(context: Context) {
 
     fun getImages(): List<String> =
         pref.getStringSet(PREF_IMAGES, emptySet())?.toList() ?: emptyList()
+
+    fun clearImages() {
+        val pref = this.pref.edit()
+        pref.remove(PREF_IMAGES)
+        pref.apply()
+    }
 }

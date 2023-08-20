@@ -49,7 +49,6 @@ dependencies {
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("io.insert-koin:koin-android:3.4.3")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
@@ -58,6 +57,7 @@ dependencies {
     implementation("com.google.android.material:material:1.9.0")
     implementation("com.github.bumptech.glide:glide:4.15.1")
     implementation("com.facebook.shimmer:shimmer:0.5.0")
+    //noinspection KaptUsageInsteadOfKsp
     kapt("com.github.bumptech.glide:compiler:4.15.1")
     ksp("se.ansman.kotshi:compiler:2.13.1")
     testImplementation("junit:junit:4.13.2")

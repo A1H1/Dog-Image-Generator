@@ -17,6 +17,11 @@
         android:theme="@style/Theme.DogImageGenerator"
         tools:targetApi="31">
         <activity
+            android:name=".ui.history.HistoryActivity"
+            android:exported="false"
+            android:label="@string/my_recently_generated_dogs"
+            android:theme="@style/Theme.DogImageGenerator.ActionBar" />
+        <activity
             android:name=".ui.generate.GenerateActivity"
             android:exported="false"
             android:label="@string/generate_dogs"

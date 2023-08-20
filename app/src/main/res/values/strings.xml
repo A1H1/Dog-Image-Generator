@@ -7,6 +7,7 @@
     <string name="go_back">Go Back</string>
     <string name="please_try_again_later">Please try again later</string>
     <string name="oops">Oops!</string>
+    <string name="clear_dogs">Clear Dogs</string>
 
     <!--Errors-->
     <string name="something_went_wrong">Something went wrong</string>
