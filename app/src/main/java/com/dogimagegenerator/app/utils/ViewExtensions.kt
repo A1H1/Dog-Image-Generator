@@ -1,6 +1,8 @@
 package com.dogimagegenerator.app.utils
 
 import android.view.View
+import android.widget.ImageView
+import com.dogimagegenerator.app.R
 
 fun View.setDebounceClickListener(debounceTime: Long = 1000L, action: () -> Unit) {
     setOnClickListener {
@@ -20,4 +22,13 @@ fun View.show() {
 
 fun View.hide() {
     visibility = View.GONE
+}
+
+fun ImageView.loadImage(url: String) {
+    GlideApp
+        .with(this)
+        .load(url)
+        .centerCrop()
+        .placeholder(R.drawable.ic_loading_spinner)
+        .into(this)
 }

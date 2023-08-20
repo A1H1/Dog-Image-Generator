@@ -2,6 +2,7 @@ package com.dogimagegenerator.app.ui.history
 
 import android.content.Context
 import android.content.Intent
+import androidx.lifecycle.lifecycleScope
 import com.dogimagegenerator.app.base.BaseMVVMActivity
 import com.dogimagegenerator.app.databinding.ActivityHistoryBinding
 import com.dogimagegenerator.app.utils.EventObserver
@@ -16,6 +17,8 @@ class HistoryActivity : BaseMVVMActivity<HistoryViewModel, ActivityHistoryBindin
         }
     }
 
+    private val adapter: HistoryAdapter by lazy { HistoryAdapter(lifecycleScope) }
+
     override val viewModel: HistoryViewModel by viewModel()
 
     override fun inflateViewBinding() = ActivityHistoryBinding.inflate(layoutInflater)
@@ -25,6 +28,7 @@ class HistoryActivity : BaseMVVMActivity<HistoryViewModel, ActivityHistoryBindin
     override fun init() {
         viewModel.getImages()
         binding.clearButton.setDebounceClickListener { viewModel.clearDogs() }
+        binding.historyRV.adapter = adapter
     }
 
     override fun observers() {
@@ -32,6 +36,6 @@ class HistoryActivity : BaseMVVMActivity<HistoryViewModel, ActivityHistoryBindin
     }
 
     private fun updateUI(images: List<String>) {
-
+        adapter.setItems(images)
     }
 }
