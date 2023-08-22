@@ -6,7 +6,9 @@ import androidx.lifecycle.lifecycleScope
 import com.dogimagegenerator.app.base.BaseMVVMActivity
 import com.dogimagegenerator.app.databinding.ActivityHistoryBinding
 import com.dogimagegenerator.app.utils.EventObserver
+import com.dogimagegenerator.app.utils.hide
 import com.dogimagegenerator.app.utils.setDebounceClickListener
+import com.dogimagegenerator.app.utils.show
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HistoryActivity : BaseMVVMActivity<HistoryViewModel, ActivityHistoryBinding>() {
@@ -36,6 +38,13 @@ class HistoryActivity : BaseMVVMActivity<HistoryViewModel, ActivityHistoryBindin
     }
 
     private fun updateUI(images: List<String>) {
+        if (images.isEmpty()) {
+            binding.emptyView.show()
+            binding.historyRV.hide()
+        } else {
+            binding.emptyView.hide()
+            binding.historyRV.show()
+        }
         adapter.setItems(images)
     }
 }

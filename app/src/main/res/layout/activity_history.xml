@@ -7,6 +7,15 @@
     android:orientation="vertical"
     tools:context=".ui.history.HistoryActivity">
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/emptyView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginVertical="@dimen/dimen_100"
+        android:text="@string/no_images_available"
+        android:visibility="gone" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/historyRV"
         android:layout_width="match_parent"
